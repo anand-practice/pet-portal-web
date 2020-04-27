@@ -7,7 +7,6 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["pet-portal-web/pet-portal-web.csproj", "pet-portal-web/"]
 RUN dotnet restore "pet-portal-web/pet-portal-web.csproj"
 COPY . .
 WORKDIR "/src/pet-portal-web"
