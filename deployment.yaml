@@ -1,0 +1,28 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pet-portal-deployment
+  labels:
+    app: pet-portal-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pet-portal-web
+  template:
+    metadata:
+      labels:
+        app: pet-portal-web
+    spec:
+      containers:
+      - name: pet-portal-web
+        image: anandpractice/petportal:web-build-no-9
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
