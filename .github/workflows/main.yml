@@ -19,4 +19,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Docker build net core app
       run: |
-        docker build -t aspnetapp .
+        docker build ./pet-portal-web -t aspnetapp .
